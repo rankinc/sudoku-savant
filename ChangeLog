@@ -1,0 +1,210 @@
+sudoku-savant (1.3.1)
+
+ * Updated German translation by Mario Blättermann.
+ * New Czech translation provided by Pavel Fric.
+
+sudoku-savant (1.3)
+
+ * French translation provided by Christophe Lincoln.
+ * Pixmap provided by SliTaz <http://www.slitaz.org/>.
+ * Slight code change to make adding more translator credits easier.
+ * Bring up-to-date with Gnome in Fedora 10.
+ * Add button to highlight squares marked with the selected number.
+ * Reset the colour bar and highlight button when generating a new board.
+ * Trigger fewer refreshes of the board area, so that text-rendering
+   errors cannot erase parts of the grid.
+ * Now compiles as 64 bit.
+
+sudoku-savant (1.2.1)
+
+ * German translation provided by Mario Blättermann.
+ * Compilation fixes for g++ 4.3.
+ * Don't enable the "Save Play" menu option unless we have a filename.
+ * Add 'pure' and 'const' GCC function attributes.
+
+sudoku-savant (1.2)
+
+ * Add some more "hot-keys" for better mouse-less control.
+ * Make sure the "Hide" and "Reveal" buttons are correctly enabled and
+   disabled on the Solution log.
+ * Fix installation problem for desktop file.
+ * Replace "Undo" and "Hint" arrows with actual buttons, so that
+   they can accept keyboard focus.
+ * Enlarge the numberpad buttons again, to avoid clipping the numbers.
+ * Repaint the board for "fake" configure events. This lets us update
+   the board if we reconfigure the global font properties.
+
+sudoku-savant (1.1)
+
+ * Sometimes, we need to use an expensive strategy early on. However,
+   that doesn't mean that we want to keep on using that strategy for
+   the rest of the puzzle before we have tried the rest of our "cheaper"
+   strategies.
+ * Although Hidden and Naked subsets are logical conjugates, it is far
+   too expensive to use the Hidden Subset algorithm to find Naked Subsets.
+   (Particularly when trying to generate a puzzle with 5x5 geometry.) So
+   split the Number Subset algorithm into two. 
+
+sudoku-savant (1.0)
+
+ * Renamed to "Sudoku Savant".
+
+sudoku (0.7.1)
+
+ * The "Cross-Sequence Constraint" code was a bit "long in the tooth",
+   and was increasing the difficulty score for every square excluded
+   instead of for every time two sequences created new exclusions. In
+   other words, it was making puzzles appear harder than they really
+   were by scoring too generously. Anyway, it's fixed now.
+
+sudoku (0.7)
+
+ * Remember to recreate the hints when generating new puzzles.
+ * Add an option to the "View" menu to highlight all incorrect moves.
+   Handy when you make a mistake, and need to back-track to the last
+   "known good" position. Also handy for cheating (*cough*).
+
+sudoku (0.6.2)
+
+ * Fix a core-dump when solving/saving a puzzle that was loaded as
+   a code-string.
+
+sudoku (0.6.1)
+
+ * Oops! REALLY stop searching for patterns as soon as we find one.
+ * Add some command-line parameters:
+    -v Prints the version information, and a (C) message.
+    -c Imports a 3x3 geometry board as a string of 81 characters.
+       (Useful for visitors to www.sudoku.com)
+ * The accepted generic term for X-Wings, Swordfish, Jellyfish etc
+   seems to be "NxN Fish". 
+ * Describe which candidates we exclude from which cells whenever we
+   find XY-Wings or XYZ-Wings.
+ * Raise the score threshold for "Moderate" puzzles, so that puzzles
+   containing only singles are "Easy" again.
+ * Oops! Some "Simple Colouring" steps were getting negative scores! Fix that!
+ * Modify the configure script to check for g++ option "-Wextra".
+
+sudoku (0.6)
+
+ * Implement the "Multi-Colouring" strategy.
+ * Lower the score for Simple Colouring slightly.
+ * Stop searching for X-Wings, Swordfish, Jellyfish etc as soon as we
+   find one.
+ * And stop using Colouring strategies once we find something, too.
+
+sudoku (0.5)
+
+ * Add a dialogue box for configuring which strategies will be used both
+   to solve and to generate sudoku puzzles.
+ * Stop trying to be clever when pro-rating the score: just renormalise
+   the score to a board with 81 squares.
+ 
+sudoku (0.4.1)
+
+ * Make the number and colour buttons 2 pixels bigger, so that their
+   contents aren't clipped by later versions of GTK+.
+ * Modify configure script to cope when the "-frepo" option is broken,
+   and to increase the strength of g++'s inlining ability.
+
+sudoku (0.4)
+
+ * Implement the "Simple Colouring" strategy.
+ * Optimise the "Guesswork" strategy by using list-splicing when saving and
+   restoring the board.
+ * Lower the score for the "completing sequences" strategy.
+ * Minor architectual change on the strategy classes ("Template method").
+ * Use "simple colouring" before either XY-Wings or XYZ-Wings.
+ * Add "colouring" support to the GUI, so that we can actually solve any new
+   puzzles that require "simple colouring". (Or just decorate the board in
+   pretty colours; the choice is yours ;-).)
+
+   NOTE: The sudoku generator doesn't use all of the algorithms at full
+         strength, and so the generator might take more steps to reach the
+         target solution than the straightforward solver might. (This is a
+         feature to stop the generator throwing its full weight at the
+         insoluble positions reached on the way to the final solution.)
+         However, it does mean that a puzzle that the Generator rated as a
+         (say) "Stinker" might only rate as "Difficult" when the solver looks
+         at it.
+
+         In the next version, both the generator and the solver will share
+         a configurable set of algorithms. This should fix the discrepancy.
+
+sudoku (0.3.1)
+
+ * Enforce any patterns (e.g. X-Wing, Swordfish and Jellyfish) in order of
+   increasing complexity, instead of patterns on rows first followed by
+   patterns on columns.
+
+sudoku (0.3)
+
+ * Search for XY-Wings, which are (apparently) the simplest examples of
+   "Forcing Chains". This should allow us to make a few more eliminations
+   before being forced to search for Forcing Chains 'for real'.
+ * Fix a bug in the strategy-processing code that made the solver work
+   harder than it was supposed to.
+ * Bite the bullet and implement the strategies as a class hierarchy.
+   There are too many different strategies now for the old implementation
+   to handle sanely.
+ * Search for XYZ-Wings, too. However, this pattern is a lot rarer than
+   the XY-Wing.
+ * Delete some dead code.
+ * Increase the score for each "guessed" move.
+
+sudoku (0.2.1)
+
+ * Oops! Re-rewrite the solution text for the "Completing Sequences" step so
+   that it is both clear AND correct.
+
+sudoku (0.2)
+
+ * Search for "Swordfish" and "Jellyfish" when we can't find any more X-Wings.
+ * For geometries larger than 3x3, extend search to include "Starfish" and
+   higher-order patterns.
+ * Fix an obscure bug in the subset-finding code.
+ * Widen the log window.
+ * Fix compiler warning with g++ v4.0.2.
+ * Validate a new board before we try to solve it. This saves the brute-
+   force algorithm from churning through untold numbers of useless permutations
+   looking for something that cannot possibly exist.
+ * Only "finalise" the last generated puzzle; not every single one.
+
+sudoku (0.1.6)
+
+ * Allow us to pipe a new game directly into the grid from Standard Input.
+ * Fix a thinko in the number subset algorithm: it needs to search for
+   subsets of up to (N - 2) numbers, but can limit itself by asking how
+   many numbers are actually missing in any given sequence. So (e.g.) if
+   a sequence has 5 missing numbers then there's no point in searching
+   for subsets of 4 or 5 numbers.
+ * Allow the player to add up to 4 note marks in each empty square,
+   by selecting a number on the number pad and then right-clicking
+   on the square. Making a move is now by left-clicking only.
+
+sudoku (0.1.5)
+
+ * If we are forced to resort to guesswork, delete any incorrect
+   guesses from our hint list.
+ * Switch to standard names of Row, Column and Box.
+ * Search for "X-Wings" when we can't find any more subsets.
+
+sudoku (0.1.4)
+
+ * Reimplement number subsets strategy to work properly with > 2 numbers.
+ * Don't preserve the last-used filename across different games.
+ * Re-enable the number pad if we change geometry during "manual generate" mode.
+
+sudoku (0.1.3)
+
+ * Error messages if we can't read or write files.
+
+sudoku (0.1.2)
+
+ * Fix enabling and disabling of File menu items.
+ * Fix repainting of canvas when loading an invalid game.
+ * Fix segfaults with hints and game saving.
+
+sudoku (0.1)
+
+ * Initial internal release

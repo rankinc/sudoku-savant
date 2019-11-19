@@ -1,0 +1,17 @@
+*.o
+*.rpo
+
+Makefile
+Makefile.in
+configure
+config.*
+
+ABOUT-NLS
+COPYING
+INSTALL
+depcomp
+missing
+
+autom4te.cache/
+m4/
+.deps/

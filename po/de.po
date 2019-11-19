@@ -1,0 +1,574 @@
+# German translation for Sudoku Savant.
+# Copyright (C) 2005-2010 Chris Rankin
+# This file is distributed under the same license as the Sudoku Savant package.
+# Chris Rankin <rankincj@yahoo.com>, 2008.
+# Mario Blättermann <mariobl@gnome.org>, 2008, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.3.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-03 01:08+0100\n"
+"PO-Revision-Date: 2010-03-03 01:14+0100\n"
+"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/main.cpp:36
+msgid "A sudoku solver/generator program, v"
+msgstr "Ein Sudoku-Erzeugungs- und Lösungsprogramm, v"
+
+#: ../src/main.cpp:47
+msgid "Usage: sudoku-savant [options]"
+msgstr "Aufruf: sudoku-savant [Optionen]"
+
+#: ../src/main.cpp:48
+msgid "Options:"
+msgstr "Optionen:"
+
+#: ../src/main.cpp:49
+msgid "  -c, --code CODESTRING\tLoad a 9x9 puzzle as a string of 81 digits"
+msgstr ""
+"  -c, --code ZEICHENKETTE\tEin 9x9-Puzzle als Zeichenkette aus 81 Ziffern "
+"laden"
+
+#: ../src/main.cpp:50
+msgid "  -v, --version\t\tShow version information"
+msgstr "  -v, --version\t\tVersionsinformationen anzeigen"
+
+#: ../src/main.cpp:51
+msgid "  -h, --help\t\tShow this message"
+msgstr "  -h, --help\t\tDiese Hilfemeldung anzeigen"
+
+#: ../src/main.cpp:53
+msgid "Sudoku files may also be read from Standard Input."
+msgstr "Sudoku-Dateien können auch von der Standardeingabe gelesen werden."
+
+#: ../src/main.cpp:98
+msgid "Invalid option: "
+msgstr "Ungültige Option: "
+
+#: ../src/main.cpp:133
+msgid "Exception: "
+msgstr "Ausnahme: "
+
+#: ../src/main.cpp:138
+msgid "Unknown exception"
+msgstr "Unbekannte Ausnahme"
+
+#: ../src/loader.cpp:22
+msgid "Board size differs from input string"
+msgstr "Spielfeldgröße und eingegebene Zeichenkette unterschiedlich"
+
+#: ../src/document.cpp:319
+msgid "Invalid option ["
+msgstr "Ungültige Option ["
+
+#: ../src/document.cpp:480
+msgid "Impossible to solve for "
+msgstr "Lösung unmöglich für "
+
+#: ../src/document.cpp:543
+msgid "Unique logical solution"
+msgstr "Eine logische Lösung"
+
+#: ../src/document.cpp:552
+msgid "Unique solution (with some guesswork)"
+msgstr "Eine logische Lösung (vermutlich)"
+
+#: ../src/document.cpp:556
+msgid "At least "
+msgstr "Mindestens "
+
+#: ../src/document.cpp:556 ../src/document.cpp:560
+msgid " solutions"
+msgstr " Lösungen"
+
+#: ../src/document.cpp:748
+msgid "Cannot complete the puzzle from this position."
+msgstr "Vervollständigung aus dieser Stellung nicht möglich."
+
+#: ../src/document.cpp:760
+msgid ": NO SOLUTION"
+msgstr ": KEINE LÖSUNG"
+
+#: ../src/board.cpp:74
+msgid "Easy"
+msgstr "Leicht"
+
+#: ../src/board.cpp:75
+msgid "Moderate"
+msgstr "Mittel"
+
+#: ../src/board.cpp:76
+msgid "Difficult"
+msgstr "Schwierig"
+
+#: ../src/board.cpp:77
+msgid "Stinker"
+msgstr "Stinker"
+
+#: ../src/board.cpp:78
+msgid "Nightmare"
+msgstr "Albtraum"
+
+#: ../src/board.cpp:79
+msgid "Obscene"
+msgstr "Obszön"
+
+#: ../src/board.cpp:206
+msgid "Box("
+msgstr "Box("
+
+#: ../src/board.cpp:227
+msgid "Row "
+msgstr "Zeile "
+
+#: ../src/board.cpp:228
+msgid "Column "
+msgstr "Spalte "
+
+#: ../src/board.cpp:322
+msgid "Cannot assign board with geometry "
+msgstr "Erzeugung eines Spielfeldes mit dieser Geometrie nicht möglich"
+
+#: ../src/board.cpp:324
+msgid " to one with geometry "
+msgstr " zu Spielfeld mit Geometrie"
+
+#: ../src/board.cpp:455 ../src/label.cpp:35
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: ../src/window.cpp:241
+msgid "Select _Strategies"
+msgstr "_Strategie auswählen"
+
+#: ../src/window.cpp:256
+msgid "Minimum _Rating"
+msgstr "Schwie_rigkeitsgrad"
+
+#: ../src/window.cpp:328
+msgid "_Reset Puzzle"
+msgstr "Spiel zu_rücksetzen"
+
+#: ../src/window.cpp:421
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: ../src/window.cpp:422
+msgid "Hint"
+msgstr "Hinweis"
+
+#: ../src/window.cpp:426
+msgid "Highlight cells marked with the chosen number"
+msgstr "Alle Zellen mit gewählter Zahl hervorheben."
+
+#: ../src/window.cpp:625
+msgid "Could not read file"
+msgstr "Datei konnte nicht gelesen werden"
+
+#: ../src/window.cpp:653
+msgid "Illegal puzzle"
+msgstr "Regelwidriges Spielfeld"
+
+#: ../src/window.cpp:660
+msgid "Invalid file format"
+msgstr "Ungültiges Dateiformat"
+
+#: ../src/window.cpp:679
+msgid "Could not write to file"
+msgstr "Datei kann nicht geschrieben werden"
+
+#: ../src/window.cpp:950
+msgid "_Done"
+msgstr "_Fertig"
+
+#: ../src/window.cpp:965 ../src/interface.c:398
+msgid "_Manual"
+msgstr "_Manuell"
+
+#: ../src/window.cpp:1029
+msgid ","
+msgstr ","
+
+#: ../src/window.cpp:1196 ../src/solution.cpp:122
+msgid "Number "
+msgstr "Zahl "
+
+#: ../src/window.cpp:1198
+msgid " already present in "
+msgstr " ist bereits in "
+
+#: ../src/window.cpp:1387
+msgid "Completed"
+msgstr "Beendet"
+
+#: ../src/aboutbox.cpp:40
+msgid ""
+"A GUI version of a perfectly-good command line tool, written for the Linux "
+"Format magazine's \"Sudoku Bounty\" competition, and released under the GPL.\n"
+"\n"
+"With many thanks to the GTK and Glade developers, without whose efforts I "
+"would never have managed to get any kind of dratted GUI-thing working.\n"
+"\n"
+"Also, a big thank-you to the denizens of the \"Advanced Solving Techniques\" "
+"forum on www.sudoku.com, without whom I would never have understood half of "
+"the algorithms that I have implemented here."
+msgstr ""
+"Eine grafische Version eines perfekten Befehlszeilenprogramms, geschrieben "
+"für »Sudoku Bounty« in der Zeitschrift »Linux Format«, veröffentlicht unter den "
+"Bedingungen der GPL.\n"
+"\n"
+"Herzlichen Dank an die Entwickler von GTK und Glade, ohne deren Bemühungen "
+"ich wohl keine funktionierende grafische Anwendung zustande bekommen hätte.\n"
+"\n"
+"Vielen Dank auch an die Mitglieder des »Advanced Solving Techniques«-Forums "
+"auf www.sudoku.com, ohne die ich nicht einmal die Hälfte der Algorithmen "
+"verstanden hätte, die nun diesem Programm zugrunde liegen."
+
+#: ../src/solution.cpp:56 ../src/solution.cpp:74 ../src/solution.cpp:220
+msgid ", "
+msgstr ", "
+
+#: ../src/solution.cpp:87
+msgid "Forced to set "
+msgstr "Setze "
+
+#: ../src/solution.cpp:89 ../src/solution.cpp:105 ../src/square.cpp:143
+msgid " to "
+msgstr " auf "
+
+#: ../src/solution.cpp:91 ../src/solution.cpp:107 ../src/solution.cpp:128
+#: ../src/solution.cpp:147 ../src/solution.cpp:173 ../src/solution.cpp:249
+#: ../src/solution.cpp:275 ../src/solution.cpp:300
+msgid "."
+msgstr "."
+
+#: ../src/solution.cpp:103
+msgid "Proposing setting "
+msgstr "Vorschlag"
+
+#: ../src/solution.cpp:124
+msgid " can only go in "
+msgstr " kann nur in "
+
+#: ../src/solution.cpp:126 ../src/solution.cpp:167
+msgid " in "
+msgstr " in "
+
+#: ../src/solution.cpp:142
+msgid "Numbers "
+msgstr "Zahlen "
+
+#: ../src/solution.cpp:143
+msgid " must go in {"
+msgstr " muss in {"
+
+#: ../src/solution.cpp:147
+msgid "} in "
+msgstr "} in "
+
+#: ../src/solution.cpp:163
+msgid "{"
+msgstr "{"
+
+#: ../src/solution.cpp:165 ../src/solution.cpp:247 ../src/solution.cpp:273
+#: ../src/solution.cpp:300
+msgid "} cannot be "
+msgstr "} kann nicht "
+
+#: ../src/solution.cpp:169
+msgid " because "
+msgstr " sein, weil "
+
+#: ../src/solution.cpp:171
+msgid " is locked into "
+msgstr " gesperrt ist in "
+
+#: ../src/solution.cpp:188
+msgid "X-Wing"
+msgstr "X-Schwinge"
+
+#: ../src/solution.cpp:192
+msgid "Swordfish"
+msgstr "Schwertfisch"
+
+#: ../src/solution.cpp:196
+msgid "Jellyfish"
+msgstr "Qualle"
+
+#: ../src/solution.cpp:200
+msgid "Starfish"
+msgstr "Seestern"
+
+#: ../src/solution.cpp:204
+msgid " fish"
+msgstr " Fisch"
+
+#: ../src/solution.cpp:212
+msgid ": Number "
+msgstr ": Zahl "
+
+#: ../src/solution.cpp:213
+msgid " limited to positions "
+msgstr " ist begrenzt auf "
+
+#: ../src/solution.cpp:216
+msgid " in {"
+msgstr " in {"
+
+#. while
+#: ../src/solution.cpp:223
+msgid "}"
+msgstr "}"
+
+#: ../src/solution.cpp:238
+msgid "XY-Wing at "
+msgstr "XY-Schwinge auf "
+
+#: ../src/solution.cpp:239 ../src/solution.cpp:265
+msgid ", branching to "
+msgstr ", verzweigt zu "
+
+#: ../src/solution.cpp:241 ../src/solution.cpp:267
+msgid " and "
+msgstr " und "
+
+#: ../src/solution.cpp:243 ../src/solution.cpp:269
+msgid ": {"
+msgstr ": {"
+
+#: ../src/solution.cpp:264
+msgid "XYZ-Wing at "
+msgstr "XYZ-Schwinge auf "
+
+#: ../src/solution.cpp:289
+msgid "Multi-Colouring: {"
+msgstr "Mehrere Farben: {"
+
+#: ../src/solution.cpp:293
+msgid "Simple Colouring("
+msgstr "Einfache Farbe("
+
+#: ../src/solution.cpp:294
+msgid "Contradiction"
+msgstr "Widerspruch"
+
+#: ../src/solution.cpp:294
+msgid "Exclusion"
+msgstr "Ausschluss"
+
+#: ../src/solution.cpp:295
+msgid "): {"
+msgstr "): {"
+
+#: ../src/puzzle.cpp:823
+msgid "VIOLATION at "
+msgstr "REGELVERLETZUNG in"
+
+#: ../src/puzzle.cpp:825
+msgid ": Reversing most recent proposal"
+msgstr ": Letzter Vorschlag wird zurückgenommen"
+
+#: ../src/puzzle.cpp:877
+msgid "FOUND SOLUTION "
+msgstr "LÖSUNG GEFUNDEN "
+
+#: ../src/colouring.cpp:314
+msgid "Cannot create paint pot for colour "
+msgstr "Farbschema kann nicht erzeugt werden für Farbe "
+
+#: ../src/strategydialog.cpp:144
+msgid "Default"
+msgstr "Standard"
+
+#: ../src/strategydialog.cpp:162
+msgid "Up to this size"
+msgstr "Bis zu dieser Größe"
+
+#: ../src/strategydialog.cpp:254
+msgid "_Hidden Subsets"
+msgstr "_Versteckte Subsets"
+
+#: ../src/strategydialog.cpp:255
+msgid "_Naked Subsets"
+msgstr "_Offene Subsets"
+
+#: ../src/strategydialog.cpp:256
+msgid "NxN _Fish"
+msgstr "NxN _Fisch"
+
+#: ../src/strategydialog.cpp:260
+msgid "Sudoku Strategies"
+msgstr "Sudoku-Strategien"
+
+#: ../src/strategydialog.cpp:291
+msgid "No Colouring"
+msgstr "Keine Farben"
+
+#: ../src/strategydialog.cpp:292
+msgid "Simple Colouring"
+msgstr "Einfache Farbe"
+
+#: ../src/strategydialog.cpp:293
+msgid "Multi-Colouring"
+msgstr "Mehrere Farben"
+
+#: ../src/strategydialog.cpp:296
+msgid "_XY-Wings"
+msgstr "_XY-Schwingen"
+
+#: ../src/strategydialog.cpp:299
+msgid "XY_Z-Wings"
+msgstr "XY_Z-Schwingen"
+
+#: ../src/square.cpp:26
+msgid "Square"
+msgstr "Feld "
+
+#: ../src/square.cpp:142
+msgid "Setting "
+msgstr "Setzen von"
+
+#: ../src/square.cpp:144
+msgid " would violate the board"
+msgstr " würde Lösung unmöglich machen"
+
+#: ../src/square.cpp:212 ../src/square.cpp:259
+msgid "Forbidding "
+msgstr "Verboten"
+
+#: ../src/square.cpp:213 ../src/square.cpp:260
+msgid " to be "
+msgstr " auf "
+
+#: ../src/square.cpp:214 ../src/square.cpp:261
+msgid " violates the board"
+msgstr " macht Lösung unmöglich"
+
+#: ../src/sequence.cpp:276
+msgid "Too many numbers!"
+msgstr "Zu viele Zahlen!"
+
+#: ../src/interface.c:115
+msgid "Sudoku Savant"
+msgstr "Sudoku Savant"
+
+#: ../src/interface.c:129
+msgid "_File"
+msgstr "_Datei"
+
+#: ../src/interface.c:140
+msgid "_Save Play"
+msgstr "_Spiel speichern"
+
+#: ../src/interface.c:149
+msgid "Save Play _As"
+msgstr "Spiel speichern _unter"
+
+#: ../src/interface.c:163
+msgid "Save _Puzzle"
+msgstr "_Puzzle speichern"
+
+#: ../src/interface.c:181
+msgid "_Options"
+msgstr "_Optionen"
+
+#: ../src/interface.c:188
+msgid "_Geometry"
+msgstr "_Geometrie"
+
+#: ../src/interface.c:192
+msgid "_View"
+msgstr "_Ansicht"
+
+#: ../src/interface.c:199
+msgid "Show _Logs"
+msgstr "Protoko_lle anzeigen"
+
+#: ../src/interface.c:202
+msgid "Show the hint and solution logs."
+msgstr "Protokolle der Hinweise und Lösungen anzeigen."
+
+#: ../src/interface.c:204
+msgid "_Highlight Wrong Moves"
+msgstr "Fehlerhafte Eintragungen _hervorheben"
+
+#: ../src/interface.c:208
+msgid "Highlight any cells where the number is incorrect."
+msgstr "Alle Zellen mit falschen Einträgen hervorheben."
+
+#: ../src/interface.c:210
+msgid "_Help"
+msgstr "_Hilfe"
+
+#: ../src/interface.c:217
+msgid "_About"
+msgstr "_Info"
+
+#: ../src/interface.c:252
+msgid "Hints"
+msgstr "Hinweise"
+
+#: ../src/interface.c:302
+msgid "_Reveal"
+msgstr "_Zeigen"
+
+#: ../src/interface.c:324
+msgid "Hi_de"
+msgstr "_Verbergen"
+
+#: ../src/interface.c:328
+msgid "Show _All"
+msgstr "_Alle zeigen"
+
+#: ../src/interface.c:334
+msgid "Hid_e All"
+msgstr "Alle v_erbergen"
+
+#: ../src/interface.c:340
+msgid "Computer's Solution"
+msgstr "Lösung des Rechners"
+
+#: ../src/interface.c:369
+msgid "<b>Unknown</b>"
+msgstr "<b>Unbekannt</b>"
+
+#: ../src/interface.c:392
+msgid "A_uto"
+msgstr "A_utomatisch"
+
+#: ../src/interface.c:404
+msgid "_Check"
+msgstr "_Prüfen"
+
+#: ../src/interface.c:411
+msgid "Generate"
+msgstr "Erzeugen"
+
+#: ../src/interface.c:437
+msgid "Solve"
+msgstr "Lösen"
+
+#: ../src/interface.c:645
+msgid "Geometry"
+msgstr "Spielfeld"
+
+#: ../src/interface.c:671
+msgid "x"
+msgstr "x"
+
+#: ../src/interface.c:681
+msgid "<b>Width x Height</b>"
+msgstr "<b>Breite x Höhe</b>"
+
+#: ../src/interface.c:730
+msgid "About Sudoku Savant"
+msgstr "Info zu Sudoku Savant"
+
+#: ../src/support.c:90 ../src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Pixmap-Datei %s konnte nicht gefunden werden"

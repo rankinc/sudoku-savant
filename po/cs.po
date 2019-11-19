@@ -1,0 +1,580 @@
+# German translation for Sudoku Savant.
+# Copyright (C) 2005-2010 Chris Rankin
+# This file is distributed under the same license as the Sudoku Savant package.
+#
+# Chris Rankin <rankincj@yahoo.com>, 2008.
+# Pavel Fric <fripohled@blogspot.com>, 2010.
+# Pavel Fric <fripohled.blogspot.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-28 18:16+0000\n"
+"PO-Revision-Date: 2010-12-12 11:06+0100\n"
+"Last-Translator: \n"
+"Language-Team: Czech <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: cs"
+
+#: src/main.cpp:36
+msgid "A sudoku solver/generator program, v"
+msgstr "Program pro vytváření a řešení Sudoku, v"
+
+#: src/main.cpp:47
+msgid "Usage: sudoku-savant [options]"
+msgstr "Použití: sudoku-savant [volby]"
+
+#: src/main.cpp:48
+msgid "Options:"
+msgstr "Volby:"
+
+#: src/main.cpp:49
+msgid "  -c, --code CODESTRING\tLoad a 9x9 puzzle as a string of 81 digits"
+msgstr ""
+"  -c, --code CODESTRING\tNahrát hlavolam jako řetězec složený z 81 čísel"
+
+#: src/main.cpp:50
+msgid "  -v, --version\t\tShow version information"
+msgstr "  -v, --version\t\tUkázat informace o verzi"
+
+#: src/main.cpp:51
+msgid "  -h, --help\t\tShow this message"
+msgstr "  -h, --help\t\tUkázat tuto zprávu"
+
+#: src/main.cpp:53
+msgid "Sudoku files may also be read from Standard Input."
+msgstr "Soubory Sudoku mohou být čteny i z běžného vstupu."
+
+#: src/main.cpp:98
+msgid "Invalid option: "
+msgstr "Neplatná volba:  "
+
+#: src/main.cpp:133
+msgid "Exception: "
+msgstr "Výjimka: "
+
+#: src/main.cpp:138
+msgid "Unknown exception"
+msgstr "Neznámá výjimka"
+
+#: src/loader.cpp:22
+msgid "Board size differs from input string"
+msgstr "Velikost hracího pole a zadaného řetězce znaků se liší"
+
+#: src/document.cpp:319
+msgid "Invalid option ["
+msgstr "Neplatná volba:  ["
+
+#: src/document.cpp:480
+msgid "Impossible to solve for "
+msgstr "Řešení není možné pro "
+
+#: src/document.cpp:543
+msgid "Unique logical solution"
+msgstr "Jedinečné logické řešení"
+
+#: src/document.cpp:552
+msgid "Unique solution (with some guesswork)"
+msgstr "Jedinečné logické řešení (s nějakým tím hádáním)"
+
+#: src/document.cpp:556
+msgid "At least "
+msgstr "Alespoň"
+
+#: src/document.cpp:556 src/document.cpp:560
+msgid " solutions"
+msgstr " řešení"
+
+#: src/document.cpp:748
+msgid "Cannot complete the puzzle from this position."
+msgstr "Doplnění hlavolamu z tohoto místa není možné."
+
+#: src/document.cpp:760
+msgid ": NO SOLUTION"
+msgstr ": ŽÁDNÉ ŘEŠENÍ"
+
+#: src/board.cpp:74
+msgid "Easy"
+msgstr "Jednoduchý"
+
+#: src/board.cpp:75
+msgid "Moderate"
+msgstr "Střední"
+
+#: src/board.cpp:76
+msgid "Difficult"
+msgstr "Obtížný"
+
+#: src/board.cpp:77
+msgid "Stinker"
+msgstr "Těžký"
+
+#: src/board.cpp:78
+msgid "Nightmare"
+msgstr "Zlý sen"
+
+#: src/board.cpp:79
+msgid "Obscene"
+msgstr "Do nebe volající"
+
+#: src/board.cpp:206
+msgid "Box("
+msgstr "boxu ("
+
+#: src/board.cpp:227
+msgid "Row "
+msgstr "řádku "
+
+#: src/board.cpp:228
+msgid "Column "
+msgstr "sloupci "
+
+#: src/board.cpp:322
+msgid "Cannot assign board with geometry "
+msgstr "Vytvoření hracího pole s tímto uspořádáním není možné"
+
+#: src/board.cpp:324
+msgid " to one with geometry "
+msgstr " k hracímu poli s uspořádáním"
+
+#: src/board.cpp:455 src/label.cpp:35
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: src/window.cpp:241
+msgid "Select _Strategies"
+msgstr "Vybrat _strategie"
+
+#: src/window.cpp:256
+msgid "Minimum _Rating"
+msgstr "Stupeň _obtížnosti"
+
+#: src/window.cpp:328
+msgid "_Reset Puzzle"
+msgstr "Nastavit hru _znovu"
+
+#: src/window.cpp:421
+msgid "Undo"
+msgstr "Zpět"
+
+#: src/window.cpp:422
+msgid "Hint"
+msgstr "Rada"
+
+#: src/window.cpp:426
+msgid "Highlight cells marked with the chosen number"
+msgstr "Zvýraznit buňky označené vybraným číslem"
+
+#: src/window.cpp:625
+msgid "Could not read file"
+msgstr "Soubor se nepodařilo přečíst"
+
+#: src/window.cpp:653
+msgid "Illegal puzzle"
+msgstr "Hrací pole odporující pravidlům"
+
+#: src/window.cpp:660
+msgid "Invalid file format"
+msgstr "Neplatný souborový formát"
+
+#: src/window.cpp:679
+msgid "Could not write to file"
+msgstr "Soubor se nepodařilo zapsat"
+
+#: src/window.cpp:950
+msgid "_Done"
+msgstr "_Hotovo"
+
+#: src/window.cpp:965 src/interface.c:398
+msgid "_Manual"
+msgstr "_Vlastnoručně"
+
+#: src/window.cpp:1029
+msgid ","
+msgstr ","
+
+#: src/window.cpp:1196 src/solution.cpp:122
+msgid "Number "
+msgstr "Číslo "
+
+#: src/window.cpp:1198
+msgid " already present in "
+msgstr " je již v "
+
+#: src/window.cpp:1387
+msgid "Completed"
+msgstr "Dokončeno"
+
+#: src/aboutbox.cpp:40
+msgid ""
+"A GUI version of a perfectly-good command line tool, written for the Linux "
+"Format magazine's \"Sudoku Bounty\" competition, and released under the "
+"GPL.\n"
+"\n"
+"With many thanks to the GTK and Glade developers, without whose efforts I "
+"would never have managed to get any kind of dratted GUI-thing working.\n"
+"\n"
+"Also, a big thank-you to the denizens of the \"Advanced Solving Techniques\" "
+"forum on www.sudoku.com, without whom I would never have understood half of "
+"the algorithms that I have implemented here."
+msgstr ""
+"Obrazová verze dokonalého programu pro příkazový řádek, napsaná "
+"pro soutěž \"Sudoku Bounty\" v časopise \"Linux Format\", zveřejněná "
+"za podmínek GPL.\n"
+"\n"
+"Srdečné díky vývojářům GTK a Glade bez jejichž úsilí by se mi nikdy "
+"nepodařilo dostat jakékoli obrazové rozhraní do stavu, kdy by pracovalo.\n"
+"\n"
+"Velké poděkování patří také členům fóra \"Advanced Solving Techniques\"-"
+"na stránkách www.sudoku.com, bez nichž bych neporozuměl ani polovině "
+"algoritmů, jež jsou nyní základem programu."
+
+#: src/solution.cpp:56 src/solution.cpp:74 src/solution.cpp:220
+msgid ", "
+msgstr ", "
+
+#: src/solution.cpp:87
+msgid "Forced to set "
+msgstr "Vynuceno nastavení "
+
+#: src/solution.cpp:89 src/solution.cpp:105 src/square.cpp:143
+msgid " to "
+msgstr " na "
+
+#: src/solution.cpp:91 src/solution.cpp:107 src/solution.cpp:128
+#: src/solution.cpp:147 src/solution.cpp:173 src/solution.cpp:249
+#: src/solution.cpp:275 src/solution.cpp:300
+msgid "."
+msgstr "."
+
+#: src/solution.cpp:103
+msgid "Proposing setting "
+msgstr "Návrh "
+
+#: src/solution.cpp:124
+msgid " can only go in "
+msgstr " může být jen v "
+
+#: src/solution.cpp:126 src/solution.cpp:167
+msgid " in "
+msgstr " v "
+
+#: src/solution.cpp:142
+msgid "Numbers "
+msgstr "Čísla "
+
+#: src/solution.cpp:143
+msgid " must go in {"
+msgstr " musí být v {"
+
+#: src/solution.cpp:147
+msgid "} in "
+msgstr "} v "
+
+#: src/solution.cpp:163
+msgid "{"
+msgstr "{"
+
+#: src/solution.cpp:165 src/solution.cpp:247 src/solution.cpp:273
+#: src/solution.cpp:300
+msgid "} cannot be "
+msgstr "} nemůže být "
+
+#: src/solution.cpp:169
+msgid " because "
+msgstr " protože "
+
+#: src/solution.cpp:171
+msgid " is locked into "
+msgstr " je uzamčeno v "
+
+#: src/solution.cpp:188
+msgid "X-Wing"
+msgstr "X-křídlo"
+
+#: src/solution.cpp:192
+msgid "Swordfish"
+msgstr "Mečoun"
+
+#: src/solution.cpp:196
+msgid "Jellyfish"
+msgstr "Medúza"
+
+#: src/solution.cpp:200
+msgid "Starfish"
+msgstr "Hvězdice"
+
+#: src/solution.cpp:204
+msgid " fish"
+msgstr " ryba"
+
+#: src/solution.cpp:212
+msgid ": Number "
+msgstr ": Číslo "
+
+#: src/solution.cpp:213
+msgid " limited to positions "
+msgstr " je omezeno na "
+
+#: src/solution.cpp:216
+msgid " in {"
+msgstr " v {"
+
+#: src/solution.cpp:223
+msgid "}"
+msgstr "}"
+
+#: src/solution.cpp:238
+msgid "XY-Wing at "
+msgstr "XY-křídla na "
+
+#: src/solution.cpp:239 src/solution.cpp:265
+msgid ", branching to "
+msgstr ", se větví do "
+
+#: src/solution.cpp:241 src/solution.cpp:267
+msgid " and "
+msgstr " a "
+
+#: src/solution.cpp:243 src/solution.cpp:269
+msgid ": {"
+msgstr ": {"
+
+#: src/solution.cpp:264
+msgid "XYZ-Wing at "
+msgstr "XYZ-Křídla na "
+
+#: src/solution.cpp:289
+msgid "Multi-Colouring: {"
+msgstr "Více barev: {"
+
+#: src/solution.cpp:293
+msgid "Simple Colouring("
+msgstr "Jednoduché barvy ("
+
+#: src/solution.cpp:294
+msgid "Contradiction"
+msgstr "Rozpor"
+
+#: src/solution.cpp:294
+msgid "Exclusion"
+msgstr "Vyloučení"
+
+#: src/solution.cpp:295
+msgid "): {"
+msgstr "): {"
+
+#: src/puzzle.cpp:823
+msgid "VIOLATION at "
+msgstr "PORUŠENÍ PRAVIDEL v "
+
+#: src/puzzle.cpp:825
+msgid ": Reversing most recent proposal"
+msgstr ": Vzít poslední návrh zpět"
+
+#: src/puzzle.cpp:877
+msgid "FOUND SOLUTION "
+msgstr "NALEZENO ŘEŠENÍ "
+
+#: src/colouring.cpp:314
+msgid "Cannot create paint pot for colour "
+msgstr "Barevné schéma nelze vytvořit pro barvu "
+
+#: src/strategydialog.cpp:144
+msgid "Default"
+msgstr "Výchozí"
+
+#: src/strategydialog.cpp:162
+msgid "Up to this size"
+msgstr "Až po tuto velikost"
+
+#: src/strategydialog.cpp:254
+msgid "_Hidden Subsets"
+msgstr "_Skryté podmnožiny"
+
+#: src/strategydialog.cpp:255
+msgid "_Naked Subsets"
+msgstr "_Odkryté podmnožiny"
+
+#: src/strategydialog.cpp:256
+msgid "NxN _Fish"
+msgstr "NxN _ryba"
+
+#: src/strategydialog.cpp:260
+msgid "Sudoku Strategies"
+msgstr "Strategie Sudoku"
+
+#: src/strategydialog.cpp:291
+msgid "No Colouring"
+msgstr "Žádné barvy"
+
+#: src/strategydialog.cpp:292
+msgid "Simple Colouring"
+msgstr "Jednoduché barvy"
+
+#: src/strategydialog.cpp:293
+msgid "Multi-Colouring"
+msgstr "Více barev"
+
+#: src/strategydialog.cpp:296
+msgid "_XY-Wings"
+msgstr "_XY-křídla"
+
+#: src/strategydialog.cpp:299
+msgid "XY_Z-Wings"
+msgstr "XY_Z-křídla"
+
+#: src/square.cpp:26
+msgid "Square"
+msgstr "poli "
+
+#: src/square.cpp:142
+msgid "Setting "
+msgstr "Nastavení "
+
+#: src/square.cpp:144
+msgid " would violate the board"
+msgstr " by učinilo řešení nemožným"
+
+#: src/square.cpp:212 src/square.cpp:259
+msgid "Forbidding "
+msgstr "Zakázáno"
+
+#: src/square.cpp:213 src/square.cpp:260
+msgid " to be "
+msgstr " na "
+
+#: src/square.cpp:214 src/square.cpp:261
+msgid " violates the board"
+msgstr " dělá řešení nemožným"
+
+#: src/sequence.cpp:276
+msgid "Too many numbers!"
+msgstr "Příliš mnoho čísel!"
+
+#: src/interface.c:115
+msgid "Sudoku Savant"
+msgstr "Sudoku Savant"
+
+#: src/interface.c:129
+msgid "_File"
+msgstr "_Soubor"
+
+#: src/interface.c:140
+msgid "_Save Play"
+msgstr "_Uložit hru"
+
+#: src/interface.c:149
+msgid "Save Play _As"
+msgstr "Uložit hru _jako"
+
+#: src/interface.c:163
+msgid "Save _Puzzle"
+msgstr "Uložit _hlavolam"
+
+#: src/interface.c:181
+msgid "_Options"
+msgstr "_Volby"
+
+#: src/interface.c:188
+msgid "_Geometry"
+msgstr "Hrací _pole"
+
+#: src/interface.c:192
+msgid "_View"
+msgstr "_Pohled"
+
+#: src/interface.c:199
+msgid "Show _Logs"
+msgstr "Ukázat _záznamy"
+
+#: src/interface.c:202
+msgid "Show the hint and solution logs."
+msgstr "Ukázat záznamy rad a řešení."
+
+#: src/interface.c:204
+msgid "_Highlight Wrong Moves"
+msgstr "_Zvýraznit chybné postupy"
+
+#: src/interface.c:208
+msgid "Highlight any cells where the number is incorrect."
+msgstr "Zvýraznit všechny buňky s nesprávnými čísly."
+
+#: src/interface.c:210
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: src/interface.c:217
+msgid "_About"
+msgstr "_O programu"
+
+#: src/interface.c:252
+msgid "Hints"
+msgstr "Rady"
+
+#: src/interface.c:302
+msgid "_Reveal"
+msgstr "_Odkrýt"
+
+#: src/interface.c:324
+msgid "Hi_de"
+msgstr "_Skrýt"
+
+#: src/interface.c:328
+msgid "Show _All"
+msgstr "Ukázat _vše"
+
+#: src/interface.c:334
+msgid "Hid_e All"
+msgstr "Skrýt v_še"
+
+#: src/interface.c:340
+msgid "Computer's Solution"
+msgstr "Vyřešení počítačem"
+
+#: src/interface.c:369
+msgid "<b>Unknown</b>"
+msgstr "<b>Neznámá obtížnost</b>"
+
+#: src/interface.c:392
+msgid "A_uto"
+msgstr "A_utomaticky"
+
+#: src/interface.c:404
+msgid "_Check"
+msgstr "_Ověřit"
+
+#: src/interface.c:411
+msgid "Generate"
+msgstr "Vytvořit"
+
+#: src/interface.c:437
+msgid "Solve"
+msgstr "Vyřešit"
+
+#: src/interface.c:645
+msgid "Geometry"
+msgstr "Hrací pole"
+
+#: src/interface.c:671
+msgid "x"
+msgstr "x"
+
+#: src/interface.c:681
+msgid "<b>Width x Height</b>"
+msgstr "<b>Šířka x výška</b>"
+
+#: src/interface.c:730
+msgid "About Sudoku Savant"
+msgstr "O hře Sudoku Savant"
+
+#: src/support.c:90 src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Nepodařilo se najít soubor s pixmapou: %s"
+
+

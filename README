@@ -1,0 +1,325 @@
+Sudoku Savant
+=============
+
+This program is written in C++, with GTK-2.4+ and the help of Glade 2.6.8.
+It has compiled successfully on all Fedora Cores between 3 and 10 (currently
+only 32 bit versions) with g++ 3.4.4, 4.0.2, 4.1 and 4.3, as well as Slackware
+10.2 with g++ 3.3.6, and is distributed under the GPL.
+
+
+The Rules of Sudoku
+-------------------
+The game is played on an NxN square board, where N = n * m. (n,m >= 2).
+Typically, n = m = 3, so that N = 9. The board is then subdivided into
+N rectangular "boxes", such that each box is n squares wide and m
+squares high. The objective is to position the numbers 1 to N on the
+board such that the numbers 1 to N appear precisely once in each row,
+column and box. 
+
+To qualify as a valid sudoku, I believe that there should be precisely 
+one way of completing the board. The program will only generate puzzles
+where this is the case.
+
+
+Features
+========
+
+Generating Puzzles
+------------------
+The "Auto" button will generate a random sudoku puzzle, and then rate it
+as either "Easy", "Moderate", "Difficult", "Stinker", "Nightmare" or
+"Obscene". If you wish, you can also enter puzzles onto the board manually
+by pressing the "Manual" button. Clicking on any empty square in this mode
+will write the number selected on the number pad into that square. You can
+erase that number again by clicking on that square a second time. The program
+will not permit you to create an obviously invalid puzzle, and you can test
+the puzzle at any time by clicking the "Check" button. When you are satisfied
+with your puzzle, you can exit "generate" mode by clicking the "Done" button.
+
+WARNING: The sudoku-solving algorithm will try to solve each puzzle logically
+         first, but will resort to using brute force if logic fails. And while
+         a logical solution must guarantee uniqueness, it can take a LONG time
+         to find all solutions using brute force. To speed things up a bit,
+         the program will stop searching after finding 5 solutions. However,
+         this won't help you if there aren't any solutions to find...
+
+
+Board Geometry
+--------------
+You can change the board's size and layout via the Options/Geometry menu,
+where you can specify how many squares wide and high each box should be.
+
+
+Generating Easy and Difficult Puzzles
+-------------------------------------
+The sudoku-generator algorithm is best described as "intelligently random"
+:-), so while it can guarantee that any puzzle it creates has a unique,
+logical solution, it has no idea how difficult that puzzle will end up being.
+The difficulty is measured by assigning each move a score, and then adding
+all those scores up at the end. Trickier moves have a higher individual score
+than easier moves, of course, and there is a bit of scaling to account for
+larger boards needing more moves to complete anyway.
+
+Note that larger puzzles still get very difficult, very quickly ;-).
+
+To avoid having to wade through a large number of "Easy" or "Moderate"
+puzzles before finding a real "Stinker", you can set the lowest acceptable
+rating that sudoku-generator algorithm is allowed to create via the
+Options/Minimum Rating menu. This will force the generator to loop until
+it produces something that is at least as difficult as requested.
+
+This program can support any board where N <= 30, should you have a large
+chunk of your life and sanity going spare in which to solve a 6x5 "Obscene"
+puzzle. Alternatively, it's almost impossible to generate anything but "Easy"
+puzzles if N < 9, and so the "Minimum Rating" menu is disabled in this case.
+
+
+Solving Sudokus
+---------------
+To see the solution, press the "Solve" button and the program will populate
+the grid. If the puzzle has multiple solutions then you can cycle through them
+(up to a maximum of 5) using the arrow buttons.
+
+To understand how the program reached its solution, check the "View/Show Logs"
+menu. This will present a tabbed view, of which one tab is called
+"Computer's Solution".
+
+Alternatively, you can solve the sudoku yourself. Whenever you left-click on
+an empty square, the number currently selected on the number pad will be added
+to the board. You will not be allowed to add a number if that number already
+exists in the same row, column or box, but you are otherwise free to make
+as many mistakes as you like :-). If you discover that you have made a
+mistake then you can undo your moves one-by-one by clicking on the backwards
+arrow button. If you get stuck, then you can ask for a hint by clicking on
+the forwards arrow button. The program will then either tell you what its
+next move would be from the current position, or that the puzzle cannot be
+solved from this position at all.
+
+You can also make notes on the board by right-clicking in the four corners of
+each empty cell. This lets you write up to 4 "pencil marks", to help you
+remember which numbers are still candidates. The number to be written is
+selected from the number pad, and you can erase an existing pencil-mark by
+right-clicking on it again.
+
+To help you apply the "simple colouring" method to a particular puzzle, you
+can select one of eight different colours from the toolbar. Once selected,
+you can paint any empty square with this colour simply by left-clicking on it.
+You must reselect the number button from the toolbar before you can continue
+writing numbers into the empty cells again.
+
+There is a button on the toolbar to highlight all cells that contain a chosen
+pencil-marked number. The chosen number is the number currently selected on
+the number pad when you press the highlight button, and this number will
+remain highlighted until you depress the highlight button again.
+
+All pencil-marks and colours are preserved when you save a game.
+
+The View menu contains an option to highlight any cells which have incorrect
+numbers. You can use this to backtrack to a correct position, if you find
+that you have gone wrong. Or you can enable it at the start, so that you
+are notified immediately if you make a mistake.
+
+
+HOW IT WORKS
+============
+The board is divided into NxN squares, and each square belongs to precisely
+one row, column and box. Sudoku demands that each row, column and box must
+hold one each of the numbers 1 to N, and so the program collectively defines
+these to be "sequences". Hence the board also has 3N sequences, each of which
+refers to a set of N squares.
+
+Every square has a set of flags which lists the numbers that square is
+forbidden to hold. Similarly, every sequence has a set of flags that contains
+the numbers that are missing from that sequence. So at its most basic level,
+the program solves Sudokus by repeatedly applying the following strategies:
+
+ * Finding squares that have all "forbidden" flags set, except for one. The
+   square is then set to this number, and all other squares in its row,
+   column and box are forbidden to be that number.
+ * Finding sequences with a missing number that is allowed in only one of the
+   squares in that particular sequence. This missing number is then assigned
+   to that square, and the flags in the row, column, box and sequence are all
+   updated accordingly.
+
+The first strategy is the simplest and quickest to run, and so the program
+uses it first and keeps on using it until it can no longer locate suitable
+squares. After that, the program starts applying the second strategy until
+that strategy also fails. When all the strategies have been used, the program
+starts applying the first strategy again, and this continues until either
+every square has been assigned a number, or no more possible moves exist.
+
+The two strategies described so far solve a lot of simpler Sudokus. However, 
+a few more strategies are needed for the more difficult puzzles, not including
+the final "brute force" strategy. None of these strategies assigns a number
+to a square. Instead, they aim to set a few more "forbidden" flags so that one
+of the two basic strategies will find something next time around:
+
+ * "Crossed-sequences". I use this term to describe the case when the numbers
+   remaining in one sequence have implications for a second sequence. For
+   example,
+
+           Box-A   Box-B   Box-C
+
+   Row 0:  8 0 0   0 0 7   0 0 0
+   Row 1:  1 0 0   0 0 0   0 0 0
+   Row 2:  2 3 4   0 0 0   X Y Z
+
+   Here, we can forbid X, Y and Z from being 7, because the 7 in Box-B
+   means that we can only put a 7 in Row 1 in Box-A. Hence we can only
+   put a 7 in Row 2 in Box-C.
+
+ * "Number subsets". I can't explain this without another example:
+
+   Row 0:  5 0 0           0 0 1
+   Row 1:  6 0 0           0 0 5
+   Row 2:  0 0 0           0 0 7
+
+   Row 3:  9 0 0           0 0 3
+   Row 4:  0 0 0           0 0 4
+   Row 5:  7 0 0           0 0 6
+
+   Row 6:  X 0 0   0 0 3   0 0 Y
+   Row 7:  0 0 4   0 0 0   0 0 Z
+   Row 8:  1 0 0   0 0 0   0 0 9
+
+   Here, we know that Y and Z must be 2 and 8 (although we don't know which
+   is which). We also know that X cannot be 1, 3, 4, 5, 6, 7 or 9. Hence in
+   Row 6, we know that X and Y must be 2 and 8. Again, we don't know which
+   is which, but because we have managed to place a subset of numbers within
+   Row 6, we can now forbid every other empty square in Row 6 from being
+   either 2 or 8. And it doesn't have to be a subset of two numbers, but it
+   usually is.
+
+   These four strategies have been sufficient to solve all but three Sudoku
+   puzzles that I have found in newspapers over the last three months. I
+   was unable to find logical solutions for the others at the time. However,
+   with the help of newer puzzles which have *guaranteed* logical solutions,
+   and with a few clues off the Internet, I have found and fixed a flaw in
+   my subset algorithm which prevented it finding almost anything more complex
+   than a pair. I have also implemented my understanding of the "X-Wing"
+   pattern. The solver now solves *everything* I have thrown at it, with the
+   exception of a particularly pathological puzzle from Poland.
+
+   OK, not quite "everything" any more. I have discovered another pattern
+   called the "Swordfish" which seems to appear on particularly NASTY sudoku
+   boards. So the solver will now test for Swordfish if even an entire
+   squadron of X-Wings cannot find a logical solution.
+
+   And as it turns out, the Swordfish is the 3-cell equivalent of an X-Wing.
+   In other words, we need to search for a set of the same 3 (say) Column-
+   positions that a particular number must occupy on any 3 Rows. We can then
+   look along those Columns and eliminate that number from any other Row-
+   position. Obviously, the same argument applies if we reverse the roles of
+   Rows and Columns here too.
+
+   I have generalised this algorithm into "Patterns", where the X-Wing is
+   the Order 2 pattern and the Swordfish is Order 3. The Order 4 pattern
+   is apparently called the "Jellyfish", and the Order 5 is called the
+   "Starfish" (or "Squirmbag" - ugh!). I haven't heard any common names
+   for higher-order patterns, but then if you find a Starfish pattern on
+   a 3x3 board then it's only because you missed a simpler Jellyfish :-).
+
+   After failing to find X-Wings, Swordfish or Jellyfish, the solver tries
+   to use "Simple Colouring".
+
+   Simple Colouring relies on finding sequences where there are only two
+   possible places to put a number "n". The idea is that you paint one of
+   these two squares with a "colour", and its partner with the corresponding
+   "anti-colour"; the "colour" and "anti-colour" represent opposite truth-
+   states. We are hoping to find many sequences that we can colour in this
+   way, while using as few colours as possible:
+
+   For example, this puzzle can reach the following position, and we can then
+   paint some squares which have 4 as a candidate with either colour x or its
+   anticolour y:
+
+     |.1.|5.6|.4.|        |317|526|.4.|        |317|526|.4.|
+     |.8.|1..|76.|        |982|134|765|        |982|134|765|
+     |...|..9|..2|        |654|789|132|        |654|789|132|
+     |---+---+---|        |---+---+---|        |---+---+---|
+     |76.|...|...|        |761|3.8|52.|        |761|3x8|52y|
+     |2.5|..7|...|  --->  |235|.17|..6|  --->  |235|y17|x.6|
+     |.4.|6..|.1.|        |849|652|317|        |849|652|317|
+     |---+---+---|        |---+---+---|        |---+---+---|
+     |..6|...|...|        |126|..5|.73|        |126|.y5|y73|
+     |57.|...|...|        |573|.61|2..|        |573|y61|2.x|
+     |...|273|...|        |498|273|651|        |498|273|651|
+
+   However, we can see that there is a row, a column and a box that each
+   contains two squares painted with anticolour y. Hence anticolour y must
+   correspond to the "false" truth-state, because we cannot have two 4s in
+   any of these sequences. Hence we can eliminate 4 as a candidate from every
+   square coloured "y". I have labelled this approach to simple colouring as
+   "Contradiction".
+
+   Alternatively, consider this puzzle, where we can paint some of the squares
+   that have 8 as a candidate with either colour x / anticolour y, or with
+   colour a / anticolour b:
+
+     |5..|...|..6|        |5..|39.|..6|        |5.b|39y|.*6|
+     |..9|7..|...|        |6.9|7.5|.3.|        |6.9|7x5|.3y|
+     |...|21.|5..|        |.73|216|59.|        |a73|216|59b|
+     |---+---+---|        |---+---+---|        |---+---+---|
+     |...|...|...|        |9..|1.3|...|        |9..|1y3|..*|
+     |.31|.5.|..9|  --->  |.31|.57|..9|  --->  |b31|.57|.a9|
+     |76.|.2.|3..|        |76.|92.|3..|        |76.|92x|3.*|
+     |---+---+---|        |---+---+---|        |---+---+---|
+     |3..|8..|..2|        |357|8.1|9.2|        |357|8.1|9.2|
+     |...|...|8.7|        |19.|532|8.7|        |19.|532|8.7|
+     |.8.|.79|153|        |.8.|.79|153|        |.8.|.79|153|
+
+   In this case, the empty squares marked as "*" share sequences with squares
+   that are painted with colour a, and with other squares that are painted
+   with anticolour b, and so none of the "*" squares can have 8 as a candidate.
+   I have labelled this approach as "Exclusion".
+
+   We can pursue this colouring argument even further. Consider the two
+   colour/anti-colour pairs (X,Y) and (A,B). If (say) colour X and colour B
+   share either a row, column or a box anywhere then we can deduce that they
+   cannot both be "True". Hence at least one of their complementary colours
+   Y and A must be "True" instead. This lets us eliminate our candidate number
+   from any square that shares sequences with both colour Y and colour A. And
+   if this square has also been coloured (Z, say) then we can eliminate our
+   candidate number from every other Z-coloured square too.
+
+   Note that Multi-Colouring is built on top of Simple Colouring, so you
+   cannot use the Multi-Colouring strategy without having performed Simple
+   Colouring first.
+
+   If using Multiple Colours doesn't make any progress then the next step
+   is to search for XY-Wings and XYZ-Wings.
+
+   An XY-Wing is a collection of 3 squares with the following properties:
+   - Each square has only two possible candidates, such that square A has
+     candidates (x,y), square B has candidates (x,z) and square C has
+     candidates (y,z).
+   - Squares A, B and C are arranged on the board such that A and B appear
+     in at least one common sequence, A and C appear in a different common
+     sequence, and squares B and C do not share any sequence.
+   When all these conditions hold, we call square A the "stem" of an XY-Wing
+   with squares B and C as the "branches", and we can eliminate "z" as a
+   candidate from any square that shares a sequence with both branches B and C.
+
+   An XYZ-Wing resembles an XY-Wing, except that the stem square A has three
+   candidates (x,y,z) instead of just (x,y). In this case, we eliminate "z"
+   from any square that shares sequences with stem A and both branches B and C.
+
+
+How the Sudoku Generator Works
+==============================
+The generator algorithm has three phases:
+
+ * Construct a solution board.
+ * Keep populating an empty grid with random squares from the solution board,
+   until we are able to "solve" the puzzle completely.
+ * Try to remove each number from our puzzle board in turn, and see if we can
+   still solve it. If we can't then we replace the number and carry on.
+
+The first phase gets a head-start by populating the first row on the board
+with a random permutation of the numbers 1 to N. After that, it tries to
+"solve" the board by using a special "brute force" strategy that picks a
+random unforbidden number whenever it gets stuck.
+
+The second phase also has a special "brute force" strategy that simply cribs
+the number from the solution board whenever it is forced to guess.
+

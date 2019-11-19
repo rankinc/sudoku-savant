@@ -1,0 +1,18 @@
+# List of source files containing translatable strings.
+
+src/main.cpp
+src/loader.cpp
+src/document.cpp
+src/note.cpp
+src/board.cpp
+src/label.cpp
+src/window.cpp
+src/aboutbox.cpp
+src/solution.cpp
+src/puzzle.cpp
+src/colouring.cpp
+src/strategydialog.cpp
+src/square.cpp
+src/sequence.cpp
+src/interface.c
+src/support.c
